@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6ffe6;
+      padding: 20px;
+      text-align: center;
+    }
+    .result-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .score {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .correct {
+      color: green;
+    }
+    .wrong {
+      color: red;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <h1>Quiz Completed!</h1>
+    <div class="score">
+      ✅ Correct Answers: <span id="correct" class="correct">0</span><br/>
+      ❌ Wrong Answers: <span id="wrong" class="wrong">0</span>
+    </div>
+    <a href="quiz.html" class="btn">Retake Quiz</a>
+  </div>
+
+  <script>
+    const correct = localStorage.getItem("ecoCorrect") || 0;
+    const wrong = localStorage.getItem("ecoWrong") || 0;
+
+    document.getElementById("correct").innerText = correct;
+    document.getElementById("wrong").innerText = wrong;
+  </script>
+</body>
+</html>
